@@ -58,8 +58,9 @@ document.write(`<p>Primera atencion: ${radiologia[0].paciente} - ${radiologia[0]
 document.write(`<p>Primera atencion: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length -1].paciente} - ${traumatologia[traumatologia.length -1].prevision}.</p>`);
 document.write(`<p>Primera atencion: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length -1].paciente} - ${dental[dental.length -1].prevision}.</p>`);
 
-//imprimir lista de consultas, separando cada dato desplegado por un - y cada fila separada por un parrafo.
+//imprimir lista de consultas de Dental, separando cada dato desplegado por un - y cada fila separada por un parrafo.
 const requerimiento3= arreglo =>{
+    document.write(`<h2>lista de consultas de Dental</h2>`);
     arreglo.forEach(fila => {
         document.write(`<p>${fila.hora} - ${fila.especialista} - ${fila.paciente} - ${fila.rut} - ${fila.prevision}</p>`);
     });
@@ -76,6 +77,7 @@ todasLasConsultas=todasLasConsultas.sort((a,b)=>{
     return 0    
 });
 const pacientes = arreglo =>{
+    document.write(`<h2>lista de todos los pacientes.</h2>`);
     arreglo.forEach(nombre => {
         document.write(`<p>${nombre.paciente}</p>`)
     })
@@ -84,6 +86,7 @@ pacientes(todasLasConsultas);
 
 //filtrar a todos los pacientes con ISAPRE de la lista de consultas de Dental.
 const requerimiento5 = arreglo =>{
+    document.write(`<h2>lista de los pacientes de Dental con prevision en Isapre</h2>`);
     let isapre = arreglo.filter(atencion => atencion.prevision ==='ISAPRE');
     isapre.forEach(pacienteConIsapre =>{
         document.write(`<p>${pacienteConIsapre.paciente} - ${pacienteConIsapre.prevision}</p>`);
@@ -92,6 +95,7 @@ const requerimiento5 = arreglo =>{
 requerimiento5(dental);
 //filtrar a todos los pacientes con FONASA de la lista de consultas de Traumatologia.
 const requerimiento6 = arreglo =>{
+    document.write(`<h2>lista de los pacientes de traumatologia con prevision en Fonasa</h2>`);
     let fonasa = arreglo.filter(atencion => atencion.prevision ==='FONASA');
     fonasa.forEach(pacienteConFonasa =>{
         document.write(`<p>${pacienteConFonasa.paciente} - ${pacienteConFonasa.prevision}</p>`);
